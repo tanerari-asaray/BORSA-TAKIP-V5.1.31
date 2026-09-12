@@ -1,3 +1,3 @@
-# Borsa Takip V5.1.31
+# Borsa Takip V5.1.31 — VİOP Tasarım Sürümü
 
-V5.1.31 kaynak kodu ve GitHub Actions build projesi.
+VİOP odaklı mobil APK tasarım ve GitHub Actions build projesi.
