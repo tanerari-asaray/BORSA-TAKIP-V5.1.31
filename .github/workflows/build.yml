@@ -1,8 +1,8 @@
-name: V5.1.31 APK Build
+name: V5.1.31 VIOP APK
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "feature/viop-redesign-5-1-31" ]
   workflow_dispatch:
 
 permissions:
@@ -28,6 +28,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: BorsaTakipV5.1.31-debug
+          name: BorsaTakip-V5.1.31-VIOP-APK
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
