@@ -1,0 +1,1 @@
+Bu repo V5.1.31 kaynak aktarımı için hazırlanmıştır. Sohbet bağlantısında ZIP dosyasını binary olarak doğrudan GitHub'a yükleme işlemi desteklenmediği için bu dosya geçici durum kaydıdır.
