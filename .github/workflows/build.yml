@@ -2,11 +2,11 @@ name: V5.1.31 VIOP APK
 
 on:
   push:
-    branches: [ "feature/viop-redesign-5-1-31" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -25,9 +25,15 @@ jobs:
           gradle-version: '8.9'
       - name: Build debug APK
         run: gradle --no-daemon :app:assembleDebug
-      - name: Upload APK
+      - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
           name: BorsaTakip-V5.1.31-VIOP-APK
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+      - name: Publish GitHub release with APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v5.1.31-viop-${{ github.run_number }}"
+          gh release create "$TAG" app/build/outputs/apk/debug/*.apk --title "Borsa Takip V5.1.31 VİOP APK" --notes "VİOP dashboard tasarım sürümü. Debug APK." --target "${{ github.sha }}"
